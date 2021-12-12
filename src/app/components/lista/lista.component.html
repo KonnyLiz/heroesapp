@@ -1,1 +1,64 @@
-<p class="animate__animated animate__fadeIn faster">lista works!</p>
+<div class="animate__animated animate__fadeIn faster">
+
+    <h2>
+        Listado de Heroes
+    </h2>
+    <hr>
+
+    <div class="row">
+        <div class="col text-end">
+            <button class="btn btn-outline-primary" routerLink="/lista/nuevo">
+                <i class="fa fa-plus"></i>
+                Agregar
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Poder</th>
+                    <th scope="col">Vivo</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="mt-3 text-center">
+    <div class="alert alert-info" role="alert">
+        <h4>Cargando</h4>
+        <p class="mb-0">
+            <i class="fa fa-sync fa-spin fa-2x"></i>
+        </p>
+        <p class="mb-0">
+            Espere por favor...
+        </p>
+    </div>
+</div>
+
+<div class="mt-3 text-center">
+    <div class="alert alert-warning" role="alert">
+        <h4>Vacio</h4>
+        <p class="mb-0">
+            <i class="fa fa-exclamation-circle fa-2x"></i>
+        </p>
+        <p class="mb-0">
+            No hay registros...
+        </p>
+    </div>
+</div>
