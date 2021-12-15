@@ -31,14 +31,14 @@ export class HeroesService {
     };
 
     // el campo a borrar debe ser opcional en el interface
-    delete heroeTemp.id;
+    // delete heroeTemp.id;
 
     console.log('heroe actualizado');
 
     return this.http.put(`${this.URL}/heroes/${heroe.id}.json`, heroeTemp);
   }
 
-  getHeroe(id: string  | null) {
+  getHeroe(id: string | null) {
     return this.http.get(`${this.URL}/heroes/${id}.json`);
   }
 
@@ -71,7 +71,7 @@ export class HeroesService {
     // asignamos el valor de cada array al heroe
     let c = 0;
     Object.values(heroesObj).forEach((i: any) => {
-      let h: HeroeModel = new HeroeModel;
+      let h: HeroeModel;
       h = i;
 
     //   // agregamos el id
@@ -83,5 +83,9 @@ export class HeroesService {
     });
 
     return heroes;
+  }
+
+  borrarHeroe(id: string | null ){
+    return this.http.delete(`${this.URL}/heroes/${id}.json`);
   }
 }

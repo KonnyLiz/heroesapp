@@ -22,13 +22,12 @@ export class HeroeComponent implements OnInit {
 
   ngOnInit(): void {
     // otra manera de sacar parametros de ruta sin suscribirme a los cambios
-    let id = this.route.snapshot.paramMap.get('id');
-
+    let id = this.route.snapshot.paramMap.get('id')
     if (id !== 'nuevo') {
       this.heroesService.getHeroe(id).subscribe((res: any) => {
-        this.heroe = res; 
+        this.heroe = res;
         this.heroe.id = id;
-      })
+      });
     }
   }
 
