@@ -16,7 +16,6 @@ export class ListaComponent implements OnInit {
   ) {
     this.heroesService.getHeroes().subscribe(res => {
       // como viene de firebase, no es un objeto iterable
-      console.log(res);
       this.heroes = res;
     });
   }

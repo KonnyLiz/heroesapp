@@ -35,6 +35,8 @@
                         <label *ngIf="!h.vivo" class="badge bg-danger"> Muerto</label>
                     </td>
                     <td>
+                        <!-- necesitamos que angular maneje las variables, por eso routerlink
+                        esta entre corchetes -->
                         <button class="btn btn-outline-info" [routerLink]="['/heroe', h.id]">
                             <i class="fa fa-search"></i>
                         </button>

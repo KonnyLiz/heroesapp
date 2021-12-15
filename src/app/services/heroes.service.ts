@@ -38,8 +38,8 @@ export class HeroesService {
     return this.http.put(`${this.URL}/heroes/${heroe.id}.json`, heroeTemp);
   }
 
-  getHeroe(id: string) {
-    this.http.get(`${this.URL}/heroes/${id}.json`);
+  getHeroe(id: string  | null) {
+    return this.http.get(`${this.URL}/heroes/${id}.json`);
   }
 
   getHeroes() {
