@@ -47,6 +47,10 @@ export class HeroesService {
     );
   }
 
+  getHeroe(id: string) {
+    this.http.get(`${this.URL}/heroes/${id}.json`);
+  }
+
   // funcion para sacar los datos del objeto respuesta
   private crearArreglo(heroesObj: object) {
     const heroes: HeroeModel[] = [];

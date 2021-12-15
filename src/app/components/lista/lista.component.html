@@ -34,7 +34,17 @@
                         <label *ngIf="h.vivo" class="badge bg-success"> Vivo</label>
                         <label *ngIf="!h.vivo" class="badge bg-danger"> Muerto</label>
                     </td>
-                    <td>@mdo</td>
+                    <td>
+                        <button class="btn btn-outline-info" [routerLink]="['/heroe', h.id]">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button class="btn btn-outline-warning" [routerLink]="['/heroe', h.id]">
+                            <i class="fa fa-pencil-alt"></i>
+                        </button>
+                        <button class="btn btn-outline-danger" [routerLink]="['/heroe', h.id]">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
