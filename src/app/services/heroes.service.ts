@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HeroeModel } from '../models/heroe.model';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +44,11 @@ export class HeroesService {
 
   getHeroes() {
     return this.http.get(`${this.URL}/heroes.json`).pipe(
-      map(this.crearArreglo)
+      map(this.crearArreglo),
+
+      // para retardar la respuesta del servidor
+      delay(1500)
+
       // tambien se puede reumir asi
       // le decimos que la res sera el primero argumento de la funcion
       // map( res => this.crearArreglo(res))

@@ -11,17 +11,18 @@ import Swal from 'sweetalert2';
 export class ListaComponent implements OnInit {
 
   heroes: HeroeModel[] = [];
+  cargando = true;
 
   constructor(
     private heroesService: HeroesService
-  ) {
+  ) { }
+
+  ngOnInit(): void {
     this.heroesService.getHeroes().subscribe(res => {
       // como viene de firebase, no es un objeto iterable
       this.heroes = res;
+      this.cargando = false;
     });
-  }
-
-  ngOnInit(): void {
   }
 
   borrarHeroe(heroe: HeroeModel, i: number) {
