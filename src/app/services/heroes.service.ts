@@ -38,6 +38,10 @@ export class HeroesService {
     return this.http.put(`${this.URL}/heroes/${heroe.id}.json`, heroeTemp);
   }
 
+  getHeroe(id: string) {
+    this.http.get(`${this.URL}/heroes/${id}.json`);
+  }
+
   getHeroes() {
     return this.http.get(`${this.URL}/heroes.json`).pipe(
       map(this.crearArreglo)
@@ -47,12 +51,8 @@ export class HeroesService {
     );
   }
 
-  getHeroe(id: string) {
-    this.http.get(`${this.URL}/heroes/${id}.json`);
-  }
-
   // funcion para sacar los datos del objeto respuesta
-  private crearArreglo(heroesObj: object) {
+  private crearArreglo(heroesObj: any) {
     const heroes: HeroeModel[] = [];
 
     // validando que hayan datos en la respuesta
@@ -61,15 +61,24 @@ export class HeroesService {
       return [];
     }
 
+    // // creamos un arreglo de ids
+    const ids: any = [];
+    Object.keys(heroesObj).forEach(k => {
+      let id = k;
+      ids.push(id);
+    });
+
     // asignamos el valor de cada array al heroe
-    Object.values(heroesObj).forEach(i => {
+    let c = 0;
+    Object.values(heroesObj).forEach((i: any) => {
       let h: HeroeModel = new HeroeModel;
       h = i;
 
-      // agregamos el id
-      h.id = Object.keys(heroesObj)[i];
+    //   // agregamos el id
+      h.id =ids[c];
+      c ++;
 
-      // agregamos al arreglo nuevo de heroes
+    //   // agregamos al arreglo nuevo de heroes
       heroes.push(h);
     });
 

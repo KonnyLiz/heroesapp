@@ -32,6 +32,7 @@ this.heroesService
       console.error('Formulario invalido');
     }
 
+    // creando el alert
     Swal.fire({
       title: 'Espere',
       text: 'Guardando...',
